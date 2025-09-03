@@ -3,6 +3,8 @@
  */
 package iuh.fit.cs;
 
+import java.util.Objects;
+
 /**
  * @description Iuh_Fit_Cs_Stt36_24741631
  * @author Phan Đức Toàn
@@ -25,7 +27,7 @@ public class Course {
 	 */
 	public final void setCredit(int credit) {
         if (credit <= 0) {
-            throw new IllegalArgumentException("Credit must be greater than 0");
+            throw new IllegalArgumentException("Credit > 0");
         }
         this.credit = credit;
     }
@@ -52,7 +54,7 @@ public class Course {
 	 */
 	 public final void setId(String id) {
 	        if (id == null || id.isEmpty() || id.length() < 3) {
-	            throw new IllegalArgumentException("ID must have at least 3 characters");
+	            throw new IllegalArgumentException("ID >= 3");
 	        }
 	        if (!id.matches("[a-zA-Z0-9]+")) {
 	            throw new IllegalArgumentException("ID must contain only letters or digits");
@@ -94,8 +96,23 @@ public class Course {
 	}
 
 	@Override
-	public String toString() {
-		
-		return String.format("%s | %s | %s | %s", credit,department,id,title);
+	public int hashCode() {
+		return Objects.hash(id);
 	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Course other = (Course) obj;
+		return Objects.equals(id, other.id);
+	}
+	
+	@Override
+    public String toString() {
+        return String.format("%-10s | %-30s | %-10d | %-20s", id, title, credit, department);
+    }
 }
