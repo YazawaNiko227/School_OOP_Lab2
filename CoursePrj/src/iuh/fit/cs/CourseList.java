@@ -4,6 +4,7 @@
 package iuh.fit.cs;
 
 import java.util.Arrays;
+import java.util.Comparator;
 
 /**
  * @description Iuh_Fit_Cs_Stt36_24741631
@@ -88,5 +89,31 @@ public class CourseList {
             }
         }
         return resultCount > 0 ? Arrays.copyOf(result, resultCount) : null;
+    }
+    
+    public Course[] sortByTitle() {
+        Course[] sorted = Arrays.copyOf(courses, count);
+        Arrays.sort(sorted, Comparator.comparing(Course::getTitle));
+        return sorted;
+    }
+
+    public Course[] findCoursesWithMaxCredit() {
+        if (count == 0) return null;
+        
+        int maxCredit = 0;
+        for (int i = 0; i < count; i++) {
+            if (courses[i].getCredit() > maxCredit) {
+                maxCredit = courses[i].getCredit();
+            }
+        }
+
+        Course[] result = new Course[count];
+        int resultCount = 0;
+        for (int i = 0; i < count; i++) {
+            if (courses[i].getCredit() == maxCredit) {
+                result[resultCount++] = courses[i];
+            }
+        }
+        return Arrays.copyOf(result, resultCount);
     }
 }
