@@ -6,7 +6,7 @@ package iuh.fit.cs;
 import java.text.DecimalFormat;
 
 /**
- * @description Rectangle
+ * @description Iuh_Fit_Cs_Stt36_24741631
  * @author Phan Đức Toàn
  * @version 1.0
  * @created date25 thg 8, 2025 time14:11:40

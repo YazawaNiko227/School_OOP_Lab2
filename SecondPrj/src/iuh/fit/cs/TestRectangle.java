@@ -6,7 +6,7 @@ package iuh.fit.cs;
 import java.util.Scanner;
 
 /**
- * @description My introduction
+ * @description Iuh_Fit_Cs_Stt36_24741631
  * @author Phan Đức Toàn
  * @version 1.0
  * @created date25 thg 8, 2025 time14:12:26
