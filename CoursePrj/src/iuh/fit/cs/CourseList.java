@@ -47,4 +47,17 @@ public class CourseList {
 		courses[count++] = course;
 		return true;
 	}
+	
+	public boolean removeCourse(Course courseId) {
+		for (int i = 0; i < count; i++) {
+			if(courses[i].getId().equals(courseId)) {
+				System.arraycopy(courses, i + 1, courses, i, count - i - 1);
+				return true;
+			}
+		}
+		System.out.println("ID not found");
+		return false;
+	}
+	
+	
 }
