@@ -59,5 +59,34 @@ public class CourseList {
 		return false;
 	}
 	
-	
+	public Course findCourseById(String courseId) {
+        for (int i = 0; i < count; i++) {
+            if (courses[i].getId().equals(courseId)) {
+                return courses[i];
+            }
+        }
+        return null;
+    }
+
+    public Course[] findCoursesByTitle(String title) {
+        Course[] found = new Course[count];
+        int foundCount = 0;
+        for (int i = 0; i < count; i++) {
+            if (courses[i].getTitle().toLowerCase().contains(title.toLowerCase())) {
+                found[foundCount++] = courses[i];
+            }
+        }
+        return foundCount > 0 ? Arrays.copyOf(found, foundCount) : null;
+    }
+    
+    public Course[] findCoursesByDepartment(String department) {
+        Course[] result = new Course[count];
+        int resultCount = 0;
+        for (int i = 0; i < count; i++) {
+            if (courses[i].getDepartment().equalsIgnoreCase(department)) {
+                result[resultCount++] = courses[i];
+            }
+        }
+        return resultCount > 0 ? Arrays.copyOf(result, resultCount) : null;
+    }
 }
