@@ -10,5 +10,11 @@ package iuh.fit.cs;
  * @created date3 thg 9, 2025 time22:15:35
  */
 public class CourseList {
-
+	private Course[] courses;
+	private int count = 0;
+	
+	public boolean addCourse(Course courses) {
+		
+		return true;
+	}
 }

@@ -23,12 +23,12 @@ public class Course {
 	/**
 	 * @param credit the credit to set
 	 */
-	public void setCredit(int credit) {
-		if(credit <= 0) {
-			throw new IllegalArgumentException("Credit > 0");
-		}
-		this.credit = credit;
-	}
+	public final void setCredit(int credit) {
+        if (credit <= 0) {
+            throw new IllegalArgumentException("Credit must be greater than 0");
+        }
+        this.credit = credit;
+    }
 	/**
 	 * @return the department
 	 */
@@ -50,12 +50,15 @@ public class Course {
 	/**
 	 * @param id the id to set
 	 */
-	public void setId(String id) {
-		if(id == null || id.isEmpty() || id.length() < 3) {
-			throw new IllegalArgumentException("Id >= 3 & Id is string chars OR Id is string digits");
-		}
-		this.id = id;
-	}
+	 public final void setId(String id) {
+	        if (id == null || id.isEmpty() || id.length() < 3) {
+	            throw new IllegalArgumentException("ID must have at least 3 characters");
+	        }
+	        if (!id.matches("[a-zA-Z0-9]+")) {
+	            throw new IllegalArgumentException("ID must contain only letters or digits");
+	        }
+	        this.id = id;
+	    }
 	/**
 	 * @return the title
 	 */
@@ -65,12 +68,12 @@ public class Course {
 	/**
 	 * @param title the title to set
 	 */
-	public void setTitle(String title) {
-		if(title == null || title.isEmpty()) {
-			throw new IllegalArgumentException("Title can't empty");
-		}
-		this.title = title;
-	}
+	public final void setTitle(String title) {
+        if (title == null || title.isEmpty()) {
+            throw new IllegalArgumentException("Title must not be empty");
+        }
+        this.title = title;
+    }
 	/**
 	 * 
 	 */
@@ -84,10 +87,10 @@ public class Course {
 	 * @param title
 	 */
 	public Course(int credit, String department, String id, String title) {
-		this.credit = credit;
-		this.department = department;
-		this.id = id;
-		this.title = title;
+		setCredit(credit);
+		setDepartment(department);
+		setId(id);
+		setTitle(title);
 	}
 
 	@Override

@@ -15,8 +15,7 @@ public class TestCourse {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Course course = new Course();
-		System.out.println(course);
+
 	}
 
 }
