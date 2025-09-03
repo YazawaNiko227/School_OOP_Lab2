@@ -116,4 +116,16 @@ public class CourseList {
         }
         return Arrays.copyOf(result, resultCount);
     }
+    
+    public void printAll() {
+        if (count == 0) {
+            System.out.println("No courses in the list.");
+            return;
+        }
+        System.out.printf("%-10s | %-25s | %-7s | %-20s\n", "ID", "Title", "Credit", "Department");
+        System.out.println(new String(new char[68]).replace("\0", "-"));
+        for (int i = 0; i < count; i++) {
+            System.out.println(courses[i]);
+        }
+    }
 }
