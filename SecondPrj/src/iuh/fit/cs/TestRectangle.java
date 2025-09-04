@@ -1,6 +1,4 @@
-/**
- * 
- */
+
 package iuh.fit.cs;
 
 import java.util.Scanner;
