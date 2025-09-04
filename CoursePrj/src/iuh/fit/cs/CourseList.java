@@ -1,6 +1,4 @@
-/**
- * 
- */
+
 package iuh.fit.cs;
 
 import java.util.Arrays;
@@ -49,9 +47,9 @@ public class CourseList {
 		return true;
 	}
 	
-	public boolean removeCourse(Course courseId) {
+	public boolean removeCourse(String removeId) {
 		for (int i = 0; i < count; i++) {
-			if(courses[i].getId().equals(courseId)) {
+			if(courses[i].getId().equals(removeId)) {
 				System.arraycopy(courses, i + 1, courses, i, count - i - 1);
 				return true;
 			}

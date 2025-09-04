@@ -1,6 +1,4 @@
-/**
- * 
- */
+
 package iuh.fit.cs;
 
 import java.util.Objects;
@@ -76,9 +74,6 @@ public class Course {
         }
         this.title = title;
     }
-	/**
-	 * 
-	 */
 	public Course() {
 		this(404,"EMPTY","EMPTY","EMPTY");
 	}
